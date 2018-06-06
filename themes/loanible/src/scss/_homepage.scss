@@ -1,0 +1,52 @@
+
+@media (max-width: 1024px) {
+
+    $carousel-height: 100%;
+    // #carouselControls{
+    //     height: $carousel-height;
+    // }
+    .carousel-item img{
+        min-height: $carousel-height;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    $carousel-height: 683px;
+    .carousel-item img{
+        height: $carousel-height;
+    }
+    .carousel-item {
+        background-color: rgba(0,0,0, .3);
+    }
+
+}
+
+.carousel-item .findloan {
+    width: 196px;
+    color: white;
+    background-color: #13AFED;
+}
+
+@media (min-width: 768px) {
+
+    .carousel-caption {
+        top:20%;
+        height: 300px;
+    }
+    .carousel-caption .heading {
+        font-size: 52px!important;
+        font-weight: 800;
+    }
+    .carousel-caption .paragraph {
+        font-size: 38px!important;
+        letter-spacing: 1px;
+        line-height: 62px;
+    }
+
+}
+.checking-your-rate{
+    margin: 0 0 .7em;
+    line-height: 1.5;
+}

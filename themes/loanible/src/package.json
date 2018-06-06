@@ -1,0 +1,39 @@
+{
+    "name": "project1",
+    "version": "1.5.0",
+    "description": "This is where I forget to add my description",
+    "author": "jbronson",
+    "url": "#",
+    "license": "MIT License",
+    "keywords": "gulp",
+    "devDependencies": {
+        "del": "^3.0.0",
+        "es6-promise": "*",
+        "gulp": "^4.0.0",
+        "gulp-autoprefixer": "*",
+        "gulp-clean-css": "^3.9.4",
+        "gulp-concat": "*",
+        "gulp-csscomb": "*",
+        "gulp-csslint": "*",
+        "gulp-jshint": "^2.1.0",
+        "gulp-merge-media-queries": "*",
+        "gulp-notify": "*",
+        "gulp-order": "^1.1.1",
+        "gulp-plumber": "^1.2.0",
+        "gulp-rename": "*",
+        "gulp-sass": "^4.0.1",
+        "gulp-sourcemaps": "*",
+        "gulp-uglify": "*",
+        "jshint": "^2.9.5"
+    },
+    "dependencies": {
+        "babel-core": "^6.26.3",
+        "bootstrap": "^4.1.1",
+        "font-awesome": "^4.7.0",
+        "gulp-babel": "^7.0.1",
+        "jquery": "^3.3.1",
+        "merge-stream": "^1.0.1",
+        "npm": "^6.1.0",
+        "popper.js": "^1.14.3"
+    }
+}
