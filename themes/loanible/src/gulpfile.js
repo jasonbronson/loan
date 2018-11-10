@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
+var ngModuleSort = require('gulp-ng-module-sort');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var csslint = require('gulp-csslint');
@@ -29,9 +30,10 @@ var paths = {
     },
     scripts: {
       src: 'js/**/*.js',
-      dest: '../dist/js/',
-      vendor1: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
-      vendor2: 'node_modules/jquery/dist/jquery.min.js'
+      jqueryjs: 'node_modules/jquery/dist/jquery.js',
+      bootstrapjs: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      dest: '../dist/js/'
+      
     }
 };
 
@@ -61,13 +63,14 @@ function styles() {
 }
 
 function scripts() {
-    var vendor1 = gulp.src(paths.scripts.vendor1);
-    var vendor2 = gulp.src(paths.scripts.vendor2);
+    var vendor1 = gulp.src(paths.scripts.bootstrapjs);
+    var vendor2 = gulp.src(paths.scripts.jqueryjs);
     var js = gulp.src(paths.scripts.src);
     
-    return merge([js, vendor1, vendor2])
+    return merge([vendor2, vendor2, js])
       .pipe(babel())
       .pipe(uglify())
+      .pipe(ngModuleSort())
       .pipe(concat('main.min.js'))
       .pipe(gulp.dest(paths.scripts.dest));
 }
@@ -101,3 +104,4 @@ var build = gulp.series(gulp.parallel(styles, scripts, vendor_styles));
 gulp.task('build', build);
 gulp.task('default', build);
 gulp.task('watch', watch);
+gulp.task('scripts', scripts);

@@ -1,15 +1,11 @@
 <?php
-
 /**
- * Register all actions and filters for the plugin.
+ * Loads all actions and filters for site.
  *
- * Maintain a list of all hooks that are registered throughout
- * the plugin, and register them with the WordPress API. Call the
- * run function to execute the list of actions and filters.
  *
- * @package    Loader
- * @author     Jason Bronson <jasonbronson@gmail.com>
  */
+namespace Libraries;
+
 class Loader {
 
 	/**
@@ -110,12 +106,10 @@ class Loader {
 		}
 
 		foreach ( $this->actions as $hook ) {
+			
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
 
 	}
 
-    
-
 }
-

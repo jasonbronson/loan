@@ -6,6 +6,9 @@ $dropDown       : false;
 .navbar {
   background-color: $bgDefault;
   border-bottom: 1px solid #E5E4E5;
+  .nav-item{
+      padding-left: 20px;
+  }
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {
@@ -20,7 +23,7 @@ $dropDown       : false;
     .nav-link {
       color: $colDefault;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 16px;
       border-radius: .25rem;
       margin: 0 0.25em;
       &:not(.disabled) {
@@ -88,7 +91,6 @@ $dropDown       : false;
         color: #7b7b7c;
         font-weight: 500;
         font-size: 13px;
-        padding-bottom: 20px;
        } 
 @media (max-width: 1199px) {
   .navbar-expend-xl .navbar-nav .show .dropdown-menu {
@@ -107,3 +109,35 @@ $dropDown       : false;
   .dropdown-item.active {
     color: $colHighlight;
     background-color: $bgHighlight; }}
+  
+.mainlogo{
+  height:50px;
+}
+.find-my-loan-btn{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    background-color: #15c0f1;
+    border: 2px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "TT Norms Bold",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    padding: 10px 13px;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.header-login{
+  font-size: 16px !important;
+  padding-right: 20px !important;
+}

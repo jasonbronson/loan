@@ -2,3 +2,5 @@ Great*
 index.html
 uploads/*
 themes/twenty*
+.DS_Store
+debug.log

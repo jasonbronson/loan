@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Autoload
  * 
@@ -9,7 +7,6 @@
  * convention of the class files.
  *
  * @package Autoload
- * @author  Jason Bronson
  */
 class Autoload
 {
@@ -38,9 +35,8 @@ class Autoload
      *
      * @param string $className
      */
-    public static function loader($className)
+    public static function load($className)
     {
-
         
         $directory = new RecursiveDirectoryIterator(static::$pathTop, RecursiveDirectoryIterator::SKIP_DOTS);
         
@@ -54,12 +50,19 @@ class Autoload
         
         foreach (static::$fileIterator as $file) {
 
-            if (strtolower($file->getFilename()) === strtolower($filename)) {
-
+            $fileFound = strtolower($file->getFilename());
+            $fileLoading = strtolower($filename);
+            if(strpos($fileLoading, '\\') !== false){
+                $fileWithNamespace = explode('\\', $fileLoading);
+            }else{
+                $fileWithNamespace = array();
+            }
+            
+            if ( $fileFound === $fileLoading || end($fileWithNamespace) == $fileFound ) {
                 if ($file->isReadable()) {
-
-                    include_once $file->getPathname();
-
+                    if(!class_exists($className)){
+                        include_once $file->getPathname();
+                    }
                 }
                 break;
 
@@ -116,8 +119,5 @@ class Autoload
     }
 
 }
-
-Autoload::setFileExt('.php');
-spl_autoload_register('Autoload::loader');
-$main = new Main();
-Autoload::loadAllProceduralFiles();
+spl_autoload_register('Autoload::load');
+//AutoLoad::loadAllProceduralFiles();

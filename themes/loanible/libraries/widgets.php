@@ -1,109 +1,49 @@
 <?php
 
-class Widgets
-{
+/**
+ * Loads any widgets needed
+ * 
+ */
 
-    public function __construct()
-    {
+namespace Libraries;
+use \Libraries\Loader;
 
-        //register all widgets
-        add_action('widgets_init', array(&$this, 'registerHeaderWidget'));
-        add_action('widgets_init', array(&$this, 'registerFooterWidget'));
-        // add_action('widgets_init', array(&$this, 'registerFooterRibbonWidget'));
-        // add_action('widgets_init', array(&$this, 'registerFooterAdWidget'));
-        // add_action('widgets_init', array(&$this, 'registerAdWidget'));
-        // add_action('widgets_init', array(&$this, 'registerAdHomeWidget'));
+class Widgets {
 
-    }
 
-    public function registerAdWidget()
-    {
-        register_sidebar(array(
-            'name' => 'Ad',
-            'id' => 'a-d',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
-    }
+	public function __construct(){
 
-    public function registerAdHomeWidget()
-    {
-        register_sidebar(array(
-            'name' => 'Ad Homepage only',
-            'id' => 'a-d-home',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
-    }
+		$loader = new Loader();
+		$functions = array('registerHomeSidebar', 'registerPageSidebar');
+		foreach($functions as $function){
+			$loader->add_action('widgets_init', $this, $function );
+		}
+        $loader->run();
+		
+	}
 
-    public function registerFooterRibbonWidget()
-    {
+	public function registerHomeSidebar(){
+		register_sidebar( array(
+			'name'          => 'Homepage Sidebar',
+			'id'            => 'home-page-sidebar',
+			'before_widget' => false,
+			'after_widget'  => false,
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>'
+		) );
+	}
 
-        register_sidebar(array(
-            'name' => 'Footer Ribbon',
-            'id' => 'footer-ribbon',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
+	public function registerPageSidebar(){
+		register_sidebar( array(
+			'name'          => 'Page Sidebar',
+			'id'            => 'page-sidebar',
+			'before_widget' => false,
+			'after_widget'  => false,
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>'
+		) );
+	}
 
-    }
-    public function registerHeaderWidget()
-    {
 
-        register_sidebar(array(
-            'name' => 'Header',
-            'id' => 'header',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
-
-    }
-    public function registerFooterWidget()
-    {
-
-        register_sidebar(array(
-            'name' => 'Footer',
-            'id' => 'footer',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
-
-    }
-    public function registerFooterAdWidget()
-    {
-
-        register_sidebar(array(
-            'name' => 'Footer Ad Widget',
-            'id' => 'footerad-widget',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
-
-    }
-    public function registerModalsWidget()
-    {
-
-        register_sidebar(array(
-            'name' => 'Modals Widget',
-            'id' => 'modals-widget',
-            'before_widget' => false,
-            'after_widget' => false,
-            'before_title' => false,
-            'after_title' => false,
-        ));
-
-    }
 
 }
