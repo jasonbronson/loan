@@ -10,14 +10,14 @@ class CloudinaryUpload {
     public function uploadFile($file, $name){
 
         Cloudinary::config(array( 
-          "cloud_name" => "estars", 
-          "api_key" => "516182383958285", 
-          "api_secret" => "Gf3_QyMx28Pv6ORW_aRl-KdCmdU" 
+          "cloud_name" => "", 
+          "api_key" => "", 
+          "api_secret" => "" 
         ));
         
         $response = Cloudinary\Uploader::upload($file, array(
           "resource_type" => "video",
-          "public_id" => "wsoe-video/$name",
+          "public_id" => "video/$name",
           "resource_type" => "video",
           "overwrite" => TRUE,
           
