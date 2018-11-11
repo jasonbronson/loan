@@ -65,11 +65,11 @@ function styles() {
 function scripts() {
     var vendor1 = gulp.src(paths.scripts.bootstrapjs);
     var vendor2 = gulp.src(paths.scripts.jqueryjs);
-    var js = gulp.src(paths.scripts.src);
+    //var js = gulp.src(paths.scripts.src);
     
-    return merge([vendor2, vendor2, js])
-      .pipe(babel())
-      .pipe(uglify())
+    return merge([vendor2, vendor1])
+      //.pipe(babel())
+      //.pipe(uglify())
       .pipe(ngModuleSort())
       .pipe(concat('main.min.js'))
       .pipe(gulp.dest(paths.scripts.dest));
