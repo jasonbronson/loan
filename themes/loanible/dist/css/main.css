@@ -225,10 +225,11 @@ h6 {
 	text-align: center;
 }
 
+.btn-outline-primary:active,
 .btn-outline-primary:hover {
 	color: #fff;
-	border-color: #24c0eb;
-	background-color: #13a9d2;
+	border-color: #24c0eb!important;
+	background-color: #13a9d2!important;
 }
 
 .reviews {
