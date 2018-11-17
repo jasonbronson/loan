@@ -2,9 +2,7 @@
 @media (max-width: 1024px) {
 
     $carousel-height: 100%;
-    // #carouselControls{
-    //     height: $carousel-height;
-    // }
+
     .carousel-item img{
         min-height: $carousel-height;
     }
@@ -23,33 +21,65 @@
 
 }
 
-.carousel-item .findloan {
-    width: 196px;
-    color: white;
-    background-color: #13AFED;
-}
-
 @media (min-width: 768px) {
 
     .carousel-caption {
         top:20%;
         height: 300px;
+        line-height: 3;
     }
-    .carousel-caption .heading {
-        font-size: 52px!important;
-        font-weight: 800;
-    }
-    .carousel-caption .paragraph {
-        font-size: 38px!important;
-        letter-spacing: 1px;
-        line-height: 62px;
-    }
+   
 
 }
 .checking-your-rate{
     margin: 0 0 .7em;
     line-height: 1.5;
 }
-.mainlogo{
+
+#loanible-carousel .carousel-caption {
+    background: rgba(0,0,0, .4);
+  }
+
+.hero-btn{
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+}  
+.hero-cta-text {
+    font-size: 24px;
+}
+.home-cards{ 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+    .card{
+        width: 14rem;
+        margin-right: 20px;
+    }
+    .card-text{
+        min-height: 120px;
+    }
+}
+
+.section{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     
+}
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #13a9d2;
+    border-color: #24C0EB;
+}
+.reviews{
+    min-height: 200px;
+    background-color: #F8F8F8;
+    h2{
+        padding-top: 30px;
+    }
+    .checked {
+        color: orange;
+    }
 }

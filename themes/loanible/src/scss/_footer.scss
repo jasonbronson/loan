@@ -1,0 +1,27 @@
+.footer{
+    background-color: #EAE9E9;
+    min-height: 300px;
+    text-align: center;
+    padding: 50px;
+    .menu{
+        display: flex;
+        justify-content: left;
+        h4{
+            font-size: 16px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            font-size: 14px;
+        }
+    }
+    
+    .item{
+        text-align: left;
+        padding-right: 50px;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+}

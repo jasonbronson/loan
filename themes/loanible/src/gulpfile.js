@@ -50,14 +50,14 @@ function styles() {
         basename: 'main',
         suffix: '.min'
       }))
-      .pipe(sourcemaps.init())
+      //.pipe(sourcemaps.init())
       .pipe(autoPrefixer())
       .pipe(cssComb())
       .pipe(cmq({log:true}))
       .pipe(csslint())
       .pipe(csslint.formatter())
       .pipe(concat('main.css'))
-      .pipe(sourcemaps.write())
+      //.pipe(sourcemaps.write())
       .pipe(gulp.dest(paths.styles.dest))
       .pipe(notify('styles task finished'));
 }
@@ -78,12 +78,12 @@ function scripts() {
 function vendor_styles(){
 
     var vendor1 = gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css']);
-    var vendor2 = gulp.src(['node_modules/font-awesome/css/font-awesome.min.css']);
+    //var vendor2 = gulp.src(['node_modules/font-awesome/css/font-awesome.min.css']);
     
-    return merge([vendor1, vendor2])
+    return merge([vendor1])
     .pipe(concat('vendor.css'))
-    .pipe(gulp.dest('../dist/css'))
-    .pipe(notify('vendor css task finished'));
+    .pipe(gulp.dest('../dist/css'));
+    //.pipe(notify('vendor css task finished'));
 
 };   
 
